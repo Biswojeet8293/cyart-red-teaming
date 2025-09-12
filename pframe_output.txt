@@ -1,0 +1,116 @@
+XLMMacroDeobfuscator: pywin32 is not installed (only is required if you want to use MS Excel)
+
+
+--------------------------------------------------------------------------------
+File Information (time: 0:00:01.059282)
+--------------------------------------------------------------------------------
+filename         calc.exe
+filetype         PE32+ executable (GUI) x86-64, for MS Windows
+filesize         27648
+hash sha256      58189cbd4e6dc0c7d8e66b6a6f75652fc9f4afc7ce0eba7d67d8c3feb0d5381f
+virustotal       /
+imagebase        0x140000000 *
+entrypoint       0x1870
+imphash          8eeaa9499666119d13b3f44ecd77a729
+datetime         1971-09-24 16:02:24
+dll              False
+directories      import, debug, tls, resources, relocations
+sections         .text, .rdata, .data, .pdata, .rsrc, .reloc
+features         antidbg, packer
+
+
+--------------------------------------------------------------------------------
+Yara Plugins
+--------------------------------------------------------------------------------
+IsPE64
+IsWindowsGUI
+HasDebugData
+HasRichSignature
+
+
+--------------------------------------------------------------------------------
+Behavior
+--------------------------------------------------------------------------------
+Xor
+
+
+--------------------------------------------------------------------------------
+Packer
+--------------------------------------------------------------------------------
+Microsoft Visual Cpp 80 DLL
+
+
+--------------------------------------------------------------------------------
+Anti Debug
+--------------------------------------------------------------------------------
+TerminateProcess
+UnhandledExceptionFilter
+
+
+--------------------------------------------------------------------------------
+Sections Suspicious
+--------------------------------------------------------------------------------
+For each section the value of entropy is less than 6
+
+
+--------------------------------------------------------------------------------
+Metadata
+--------------------------------------------------------------------------------
+CompanyName      Microsoft Corporation
+FileDescription  Windows Calculator
+FileVersion      10.0.19041.1 (WinBuild.160101.0800)
+InternalName     CALC
+LegalCopyright   Â© Microsoft Corporation. All rights reserved.
+OriginalFilename CALC.EXE
+ProductName      MicrosoftÂ® WindowsÂ® Operating System
+ProductVersion   10.0.19041.1
+
+
+--------------------------------------------------------------------------------
+Import function
+--------------------------------------------------------------------------------
+SHELL32.dll      1
+KERNEL32.dll     12
+msvcrt.dll       14
+ADVAPI32.dll     3
+api-ms-win-core-synch-l1-2-0.dll 1
+api-ms-win-core-processthreads-l1-1-0.dll 1
+api-ms-win-core-libraryloader-l1-2-0.dll 1
+
+
+--------------------------------------------------------------------------------
+Possibile Breakpoint
+--------------------------------------------------------------------------------
+GetCurrentProcess
+GetCurrentProcessId
+GetModuleHandleW
+GetStartupInfoW
+GetTickCount
+ShellExecuteW
+Sleep
+TerminateProcess
+UnhandledExceptionFilter
+
+
+--------------------------------------------------------------------------------
+Url
+--------------------------------------------------------------------------------
+http://schemas.microsoft.com/SMI/2005/WindowsSettings
+
+
+--------------------------------------------------------------------------------
+File
+--------------------------------------------------------------------------------
+SHELL32.dll      Library
+KERNEL32.dll     Library
+msvcrt.dll       Library
+ADVAPI32.dll     Library
+api-ms-win-core-synch-l1-2-0.dll Library
+api-ms-win-core-processthreads-l1-1-0.dll Library
+api-ms-win-core-libraryloader-l1-2-0.dll Library
+
+
+--------------------------------------------------------------------------------
+Fuzzing
+--------------------------------------------------------------------------------
+Possible connections
